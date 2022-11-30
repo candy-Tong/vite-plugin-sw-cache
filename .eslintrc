@@ -2,8 +2,7 @@
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "eslint-config-airbnb-base",
-    "plugin:vue/vue3-recommended",
-    "plugin:prettier/recommended"
+    "plugin:vue/vue3-recommended"
   ],
   "env": {
     "browser": true,
@@ -11,7 +10,6 @@
     "jest": true,
     "es6": true,
     "vue/setup-compiler-macros": true
-
   },
   "plugins": [
     "vue",
