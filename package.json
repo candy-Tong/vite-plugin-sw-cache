@@ -25,7 +25,8 @@
     "vite": "^4.3.9",
     "rollup": "^3.25.1",
     "@types/node": "^18",
-    "lerna": "^7.0.2"
+    "lerna": "^7.0.2",
+    "vite-plugin-static-copy": "^0.16.0"
   },
   "keywords": [],
   "author": "",

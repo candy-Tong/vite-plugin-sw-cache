@@ -13,9 +13,11 @@
     "build:type": "tsc --declaration --emitDeclarationOnly --outDir typings",
     "build:lib": "vite build"
   },
+  "dependencies": {
+    "magic-string": "^0.30.0"
+  },
   "devDependencies": {
     "@types/node": "^18",
-    "magic-string": "^0.30.0",
     "rollup": "^3.25.1",
     "vite": "^4.3.9",
     "vue": "^3.2.45",

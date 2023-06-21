@@ -1,7 +1,7 @@
 import { Plugin, ResolvedConfig } from 'vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { OutputChunk } from 'rollup';
+import type { OutputChunk } from 'rollup';
 import MagicString from 'magic-string';
 
 interface Options{
@@ -59,20 +59,5 @@ export function swCache(options: Options): Plugin {
         },
       ];
     },
-    // 生成 sw.js
-    // async buildEnd() {
-    //   await build({
-    //     build: {
-    //       outDir: config.build.outDir,
-    //       emptyOutDir: false,
-    //       lib: {
-    //         entry: resolve(__dirname, './sw.ts'),
-    //         name: 'sw',
-    //         formats: ['es'],
-    //         fileName: 'sw.js',
-    //       },
-    //     },
-    //   });
-    // },
   };
 }

@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -7,17 +7,27 @@ export default defineConfig({
     lib: {
       entry: {
         index: 'src/index.ts',
-        register: 'src/register.ts',
-        sw: 'src/sw.ts',
       },
-      formats: ['es'],
-      fileName(_, entryName) {
-        return `${entryName}.js`;
-      },
+      name: 'swCache',
     },
     sourcemap: true,
     rollupOptions: {
-      external: ['path', 'vite', 'url'],
+      external: ['path', 'vite', 'url', 'magic-string'],
     },
+    minify: false,
   },
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/register.js',
+          dest: './',
+        },
+        {
+          src: 'src/sw.js',
+          dest: './',
+        },
+      ],
+    }),
+  ],
 });

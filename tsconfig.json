@@ -14,6 +14,7 @@
       "dom.iterable"
     ],
     "skipLibCheck": true,
+    "allowJs": true,
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -29,6 +30,7 @@
   "include": [
     "*.ts",
     "vite-plugin-sw-cache/**/*.ts",
+    "vite-plugin-sw-cache/**/*.js",
     "example/**/*.ts",
     "example/**/*.vue"
   ],

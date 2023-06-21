@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-expressions */
+/* eslint-disable no-unused-expressions,no-restricted-globals */
 // noinspection BadExpressionStatementJS
 
 const CACHE_NAME = '<CACHE_NAME>';
@@ -11,7 +11,7 @@ self.addEventListener('activate', (event) => {
   console.log('activate');
   async function cacheRequest() {
     return caches.keys()
-      .then((cacheNames: string[]) => Promise.all(cacheNames.map((cacheName: string) => {
+      .then((cacheNames) => Promise.all(cacheNames.map((cacheName) => {
         if (cacheName !== CACHE_NAME) {
           console.log('清除旧缓存:', cacheName);
           return caches.delete(cacheName);
@@ -20,12 +20,11 @@ self.addEventListener('activate', (event) => {
       })));
   }
 
-  (event as ExtendableEvent)
-    .waitUntil(cacheRequest());
+  event.waitUntil(cacheRequest());
 });
 
 self.addEventListener('fetch', (e) => {
-  const event = e as FetchEvent;
+  const event = e;
 
   console.log('fetch', e);
 
@@ -36,7 +35,7 @@ self.addEventListener('fetch', (e) => {
   }
 
   event.respondWith(caches.match(event.request)
-    .then((response: Response | undefined) => {
+    .then((response) => {
       if (response) {
         return response;
       }
@@ -49,9 +48,7 @@ self.addEventListener('fetch', (e) => {
 
         const responseToCache = response.clone();
         caches.open(CACHE_NAME)
-          .then((cache) => {
-            cache.put(event.request, responseToCache);
-          });
+          .then((cache) => cache.put(event.request, responseToCache));
 
         return response;
       });

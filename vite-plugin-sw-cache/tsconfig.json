@@ -8,6 +8,7 @@
     "*.ts",
     "src/**/*.d.ts",
     "src/**/*.ts",
+    "src/**/*.js",
     "src/**/*.tsx",
     "src/**/*.vue",
   ],
