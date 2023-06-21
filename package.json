@@ -6,8 +6,10 @@
   "module": "dist/index.js",
   "scripts": {
     "lint": "eslint . --fix",
+    "update-version": "lerna version patch --no-private --yes --force-publish -m \"chore(release): publish\"",
     "build": "cd vite-plugin-sw-cache && npm run build",
-    "release": "npm run build && lerna version patch --yes -m \"chore(release): publish\" && lerna publish from-git --yes"
+    "publish-npm": "lerna publish from-git --yes --registry https://registry.npmjs.org",
+    "release": "npm run build && npm run update-version  && npm run publish-npm"
   },
   "devDependencies": {
     "magic-string": "^0.30.0",
