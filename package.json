@@ -2,7 +2,7 @@
   "description": "",
   "type": "module",
   "private": true,
-  "main": "dist/index.js",
+  "main": "dist/index.umd.cjs",
   "module": "dist/index.js",
   "scripts": {
     "lint": "eslint . --fix",
