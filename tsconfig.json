@@ -8,8 +8,10 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": [
+      "WebWorker",
       "esnext",
-      "dom"
+      "dom",
+      "dom.iterable"
     ],
     "skipLibCheck": true,
     "strict": true,
@@ -25,10 +27,10 @@
     }
   },
   "include": [
-    "*.ts"
-  ],
-  "files": [
-    "globals.d.ts"
+    "*.ts",
+    "vite-plugin-sw-cache/**/*.ts",
+    "example/**/*.ts",
+    "example/**/*.vue"
   ],
   "compileOnSave": false
 }
