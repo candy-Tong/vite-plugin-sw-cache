@@ -2,8 +2,6 @@
   "description": "",
   "type": "module",
   "private": true,
-  "main": "dist/index.umd.cjs",
-  "module": "dist/index.js",
   "scripts": {
     "lint": "eslint . --fix",
     "update-version": "lerna version patch --no-private --yes --force-publish -m \"chore(release): publish\"",
