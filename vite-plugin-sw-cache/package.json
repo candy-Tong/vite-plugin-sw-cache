@@ -9,8 +9,7 @@
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.umd.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+    }
   },
   "typings": "typings/index.d.ts",
   "scripts": {
