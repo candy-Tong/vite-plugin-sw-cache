@@ -8,8 +8,8 @@ interface Options{
   cacheName: string
 }
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const fileName = fileURLToPath(import.meta.url);
+const dirname = path.dirname(fileName);
 
 export function swCache(options: Options): Plugin {
   let config: ResolvedConfig;
@@ -23,12 +23,12 @@ export function swCache(options: Options): Plugin {
     buildStart() {
       this.emitFile({
         type: 'chunk',
-        id: path.resolve(__dirname, './register'),
+        id: path.resolve(dirname, './register'),
         fileName: 'register.js',
       });
       this.emitFile({
         type: 'chunk',
-        id: path.resolve(__dirname, './sw'),
+        id: path.resolve(dirname, './sw'),
         fileName: 'sw.js',
       });
     },

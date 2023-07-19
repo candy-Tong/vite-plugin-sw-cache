@@ -26,11 +26,8 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (e) => {
   const event = e;
 
-  console.log('fetch', e);
-
   // 只处理带 hash 的资源请求
   if (!event.request.url.startsWith('http') || !/\/\w*([.-])\w*\.(css|js)/.test(event.request.url)) {
-    console.log('只处理带 hash 的资源请求', event.request.url, /\/\w*\.\w*\.(css|js)/.test(event.request.url));
     return;
   }
 

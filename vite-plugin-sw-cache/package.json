@@ -5,6 +5,13 @@
   "type": "module",
   "main": "dist/index.umd.cjs",
   "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "typings": "typings/index.d.ts",
   "scripts": {
     "lint": "eslint . --fix",
