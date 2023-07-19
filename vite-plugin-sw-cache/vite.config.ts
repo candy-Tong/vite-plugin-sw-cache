@@ -9,6 +9,7 @@ export default defineConfig({
         index: 'src/index.ts',
       },
       name: 'swCache',
+      formats: ['es', 'umd'],
     },
     sourcemap: true,
     rollupOptions: {
