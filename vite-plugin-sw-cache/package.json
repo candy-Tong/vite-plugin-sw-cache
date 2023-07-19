@@ -29,6 +29,10 @@
     "vue": "^3.2.45",
     "vue-tsc": "^1.0.0"
   },
+  "files": [
+    "dist",
+    "typings"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC"
